@@ -1,0 +1,13 @@
+version: '3'
+services:
+  app:
+    platform: ${DOCKER_PLATFORM:-linux/x86_64}
+    container_name: 'diagrams'
+    build:
+      context: .
+    command: /bin/sh
+    volumes:
+      - .:/var/app
+    working_dir: /var/app
+    tty: true
+    stdin_open: true
